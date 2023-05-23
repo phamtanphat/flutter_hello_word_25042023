@@ -16,11 +16,37 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Container(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text("A"),
-            Text("B"),
-            Text("C"),
-            Text("D"),
+            Expanded(
+                flex: 1,
+                child: Container(
+                    color: Colors.red,
+                    child: Text("A")
+                )
+            ),
+            Expanded(
+                flex: 2,
+                child: Container(
+                    color: Colors.green,
+                    child: Text("B")
+                )
+            ),
+            Expanded(
+                flex: 3,
+                child: Container(
+                    color: Colors.blue,
+                    child: Text("C")
+                )
+            ),
+            Expanded(
+                flex: 4,
+                child: Container(
+                    color: Colors.orange,
+                    child: Text("D")
+                )
+            ),
           ],
         ),
       ),
