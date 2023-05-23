@@ -15,54 +15,62 @@ class _HomePageState extends State<HomePage> {
         title: Text("Home page"),
       ),
       body: Container(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Expanded(
+        child: widgetBaiTap2(),
+      ),
+    );
+  }
+
+  Widget widgetBaiTap2() {
+    return Container();
+  }
+
+  Widget widgetBaiTap1() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Expanded(
                     child: Container(
                         color: Colors.red,
                         child: Center(
                             child: Text("A")
                         )
                     )
-                  ),
-                  Expanded(
-                      child: Container(
-                          color: Colors.pink,
-                          child: Center(
-                              child: Text("B")
-                          )
-                      )
-                  ),
-                  Expanded(
-                      child: Container(
-                          color: Colors.orange,
-                          child: Center(
-                              child: Text("C")
-                          )
-                      )
-                  ),
-                  Expanded(
-                      child: Container(
-                          color: Colors.blue,
-                          child: Center(
-                              child: Text("D")
-                          )
-                      )
-                  ),
-                ],
-              )
-            ),
-            Expanded(
-              child: Container(color: Colors.blue),
+                ),
+                Expanded(
+                    child: Container(
+                        color: Colors.pink,
+                        child: Center(
+                            child: Text("B")
+                        )
+                    )
+                ),
+                Expanded(
+                    child: Container(
+                        color: Colors.orange,
+                        child: Center(
+                            child: Text("C")
+                        )
+                    )
+                ),
+                Expanded(
+                    child: Container(
+                        color: Colors.blue,
+                        child: Center(
+                            child: Text("D")
+                        )
+                    )
+                ),
+              ],
             )
-          ],
         ),
-      ),
+        Expanded(
+          child: Container(color: Colors.blue),
+        )
+      ],
     );
   }
 }
