@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hello_word_25042023/stack_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -15,62 +16,8 @@ class _HomePageState extends State<HomePage> {
         title: Text("Home page"),
       ),
       body: Container(
-        child: widgetBaiTap2(),
+        child: StackWidget(),
       ),
-    );
-  }
-
-  Widget widgetBaiTap2() {
-    return Container();
-  }
-
-  Widget widgetBaiTap1() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Expanded(
-                    child: Container(
-                        color: Colors.red,
-                        child: Center(
-                            child: Text("A")
-                        )
-                    )
-                ),
-                Expanded(
-                    child: Container(
-                        color: Colors.pink,
-                        child: Center(
-                            child: Text("B")
-                        )
-                    )
-                ),
-                Expanded(
-                    child: Container(
-                        color: Colors.orange,
-                        child: Center(
-                            child: Text("C")
-                        )
-                    )
-                ),
-                Expanded(
-                    child: Container(
-                        color: Colors.blue,
-                        child: Center(
-                            child: Text("D")
-                        )
-                    )
-                ),
-              ],
-            )
-        ),
-        Expanded(
-          child: Container(color: Colors.blue),
-        )
-      ],
     );
   }
 }
