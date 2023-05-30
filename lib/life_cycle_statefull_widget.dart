@@ -8,20 +8,26 @@ class LifeCycleStateFullWidget extends StatefulWidget {
 
 // State object
 class _LifeCycleStateFullWidgetState extends State<LifeCycleStateFullWidget> {
+
+  int count = 0;
+
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Text("Count = 0", style: TextStyle(fontSize: 30)),
+        Text("Count = $count", style: TextStyle(fontSize: 30)),
         Container(
           margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               ElevatedButton(onPressed: () {
-
+                  setState(() {
+                    count += 1;
+                    print(count);
+                  });
               }, child: Text("Increase")),
               ElevatedButton(onPressed: () {
 
