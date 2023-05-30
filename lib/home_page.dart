@@ -15,9 +15,11 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text("Home page"),
       ),
-      body: Container(
-        constraints: BoxConstraints.expand(),
-        child: StackWidget(),
+      body: SafeArea(
+        child: Container(
+          constraints: BoxConstraints.expand(),
+          child: StackWidget(),
+        ),
       ),
     );
   }
