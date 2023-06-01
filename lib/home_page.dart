@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hello_word_25042023/life_cycle_statefull_widget.dart';
 import 'package:flutter_hello_word_25042023/stack_widget.dart';
 
+import 'demo_key_widget.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -19,7 +21,7 @@ class _HomePageState extends State<HomePage> {
       body: SafeArea(
         child: Container(
           constraints: BoxConstraints.expand(),
-          child: LifeCycleStateFullWidget(),
+          child: DemoKeyWidget(),
         ),
       ),
     );
