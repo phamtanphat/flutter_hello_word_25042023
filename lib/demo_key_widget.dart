@@ -10,14 +10,21 @@ class DemoKeyWidget extends StatefulWidget {
 }
 
 class _DemoKeyWidgetState extends State<DemoKeyWidget> {
-
   final List<Widget> listWidget = [];
 
   @override
   void initState() {
     super.initState();
-    listWidget.add(Children1(key: Key("1233"),));
-    listWidget.add(Children1(key: Key("234")));
+    listWidget.add(Padding(
+      key: UniqueKey(),
+      padding: const EdgeInsets.all(8.0),
+      child: Children1(),
+    ));
+    listWidget.add(Padding(
+      key: UniqueKey(),
+      padding: const EdgeInsets.all(8.0),
+      child: Children1(),
+    ));
   }
 
   @override
@@ -27,29 +34,33 @@ class _DemoKeyWidgetState extends State<DemoKeyWidget> {
         Row(children: listWidget),
         ElevatedButton(
             onPressed: () {
-                setState(() {
-                   final Widget tmpWidget = listWidget[0];
-                   listWidget.removeAt(0);
-                   listWidget.add(tmpWidget);
-                });
+              setState(() {
+                final Widget tmpWidget = listWidget[0];
+                listWidget.removeAt(0);
+                listWidget.add(tmpWidget);
+              });
             },
-            child: Text("Swap")
-        )
+            child: Text("Swap"))
       ],
     );
   }
 }
 
-class Children1 extends StatelessWidget {
+class Children1 extends StatefulWidget {
   const Children1({Key? key}) : super(key: key);
 
   @override
+  State<Children1> createState() => _Children1State();
+}
+
+class _Children1State extends State<Children1> {
+  @override
   Widget build(BuildContext context) {
     return Container(
-      width: 100,
-      height: 100,
-      color: Color.fromARGB(255, randomColor(), randomColor(), randomColor())
-    );
+        width: 100,
+        height: 100,
+        color:
+            Color.fromARGB(255, randomColor(), randomColor(), randomColor()));
   }
 
   int randomColor() {
