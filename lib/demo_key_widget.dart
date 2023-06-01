@@ -16,15 +16,15 @@ class _DemoKeyWidgetState extends State<DemoKeyWidget> {
   @override
   void initState() {
     super.initState();
-    listWidget.add(Children1());
-    listWidget.add(Children1());
+    listWidget.add(Children1(key: Key("1233"),));
+    listWidget.add(Children1(key: Key("234")));
   }
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        ...listWidget,
+        Row(children: listWidget),
         ElevatedButton(
             onPressed: () {
                 setState(() {
