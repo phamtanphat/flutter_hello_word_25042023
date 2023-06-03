@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
 class DemoBuildContextWidget extends StatefulWidget {
-  String name = "Demo build context";
+  String name = "Demo build context update";
+
+  static DemoBuildContextWidget? of(BuildContext context) {
+    return context.findAncestorWidgetOfExactType();
+  }
 
   @override
   State<DemoBuildContextWidget> createState() => _DemoBuildContextWidgetState();
@@ -29,8 +33,10 @@ class ParentWidget extends StatefulWidget {
 class _ParentWidgetState extends State<ParentWidget> {
   @override
   Widget build(BuildContext context) {
+    DemoBuildContextWidget? demoBuildContextWidget = DemoBuildContextWidget.of(context);
     return Column(
       children: [
+        Text("Value Demo Build context: ${demoBuildContextWidget?.name}"),
         Text("Parent widget"),
         widget.child
       ],
